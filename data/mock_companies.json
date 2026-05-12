@@ -1,0 +1,62 @@
+{
+  "12345678": {
+    "business_name": "Northlight Studio",
+    "trading_status": "sole_trader",
+    "registration_date": "2022-01-01",
+    "sector": "Creative services",
+    "postcode": "LS1 4AP",
+    "employee_count": 1,
+    "annual_revenue": 28400.0,
+    "goals": [],
+    "data_sources": ["Companies House", "HMRC"],
+    "companies_house_id": "12345678"
+  },
+  "OC987654": {
+    "business_name": "Yorkshire Digital Ltd",
+    "trading_status": "limited_company",
+    "registration_date": "2020-06-15",
+    "sector": "Digital",
+    "postcode": "BD1 2AB",
+    "employee_count": 8,
+    "annual_revenue": 450000.0,
+    "goals": [],
+    "data_sources": ["Companies House", "HMRC"],
+    "companies_house_id": "OC987654"
+  },
+  "LP556677": {
+    "business_name": "Green Leaf Hospitality",
+    "trading_status": "partnership",
+    "registration_date": "2023-03-10",
+    "sector": "Hospitality",
+    "postcode": "LS6 2NX",
+    "employee_count": 4,
+    "annual_revenue": 95000.0,
+    "goals": [],
+    "data_sources": ["Companies House", "HMRC"],
+    "companies_house_id": "LP556677"
+  },
+  "SC112233": {
+    "business_name": "Pennine R&D Technologies Ltd",
+    "trading_status": "limited_company",
+    "registration_date": "2018-11-20",
+    "sector": "Engineering",
+    "postcode": "HD1 3JF",
+    "employee_count": 22,
+    "annual_revenue": 1200000.0,
+    "goals": [],
+    "data_sources": ["Companies House", "HMRC"],
+    "companies_house_id": "SC112233"
+  },
+  "AB334455": {
+    "business_name": "Thornbury Retail Ltd",
+    "trading_status": "limited_company",
+    "registration_date": "2024-01-08",
+    "sector": "Retail",
+    "postcode": "LS2 7HY",
+    "employee_count": 3,
+    "annual_revenue": 41000.0,
+    "goals": [],
+    "data_sources": ["Companies House", "HMRC"],
+    "companies_house_id": "AB334455"
+  }
+}

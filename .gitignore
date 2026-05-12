@@ -175,3 +175,18 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos
+=======
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local database and secrets
+fundingfit.db
+.env

@@ -1,0 +1,105 @@
+[
+  {
+    "id": "adventure-grant",
+    "name": "AD:VENTURE Grant",
+    "funder": "West Yorkshire Combined Authority",
+    "region": "west_yorkshire",
+    "amount_display": "Up to £5,000",
+    "max_amount": 5000,
+    "eligibility": {
+      "max_trading_years": 3,
+      "required_regions": ["west_yorkshire"],
+      "eligible_sectors": ["creative", "digital", "professional_services", "retail", "hospitality"],
+      "notes": "Must be based in West Yorkshire, trading under 3 years"
+    },
+    "effort_hours": 2,
+    "source_url": "https://ad-venture.org.uk",
+    "last_synced": "2025-01-01"
+  },
+  {
+    "id": "wy-growth-fund",
+    "name": "WY Growth Fund",
+    "funder": "West Yorkshire Combined Authority",
+    "region": "west_yorkshire",
+    "amount_display": "Up to £25,000",
+    "max_amount": 25000,
+    "eligibility": {
+      "min_trading_years": 1,
+      "required_regions": ["west_yorkshire"],
+      "requires_scaling_plan": true,
+      "requires_financial_projections": true,
+      "notes": "Trading over 1 year, based in West Yorkshire, planning to scale"
+    },
+    "effort_hours": 4,
+    "source_url": "https://westyorks-ca.gov.uk/business/",
+    "last_synced": "2025-01-01"
+  },
+  {
+    "id": "startup-loan",
+    "name": "Start Up Loan",
+    "funder": "British Business Bank",
+    "region": "national",
+    "amount_display": "£500–£25,000",
+    "max_amount": 25000,
+    "eligibility": {
+      "max_trading_years": 2,
+      "required_regions": ["national"],
+      "requires_personal_credit_check": true,
+      "notes": "Trading under 2 years, UK-based, personal credit check required"
+    },
+    "effort_hours": 3,
+    "source_url": "https://startuploans.co.uk",
+    "last_synced": "2025-01-01"
+  },
+  {
+    "id": "help-to-grow",
+    "name": "Help to Grow: Management",
+    "funder": "Department for Business & Trade",
+    "region": "national",
+    "amount_display": "Subsidised leadership course (£750 government contribution)",
+    "max_amount": 0,
+    "eligibility": {
+      "min_trading_years": 1,
+      "min_employees": 5,
+      "excluded_sectors": ["public_sector"],
+      "notes": "Trading over 1 year, 5+ employees, not in public sector"
+    },
+    "effort_hours": 1,
+    "source_url": "https://helptogrow.campaign.gov.uk",
+    "last_synced": "2025-01-01"
+  },
+  {
+    "id": "rd-tax-relief",
+    "name": "R&D Tax Relief (HMRC)",
+    "funder": "HMRC",
+    "region": "national",
+    "amount_display": "Up to 33% of qualifying R&D spend reclaimed",
+    "max_amount": 0,
+    "eligibility": {
+      "required_trading_status": ["limited_company"],
+      "requires_qualifying_rd_spend": true,
+      "requires_accountant": true,
+      "notes": "Limited company only, must have qualifying innovation spend, requires accountant involvement"
+    },
+    "effort_hours": 5,
+    "source_url": "https://gov.uk/guidance/corporation-tax-research-and-development-rd-relief",
+    "last_synced": "2025-01-01"
+  },
+  {
+    "id": "leeds-council-grant",
+    "name": "Leeds City Council Business Support Grant",
+    "funder": "Leeds City Council",
+    "region": "leeds",
+    "amount_display": "Up to £2,500",
+    "max_amount": 2500,
+    "eligibility": {
+      "max_trading_years": 2,
+      "max_employees": 9,
+      "required_regions": ["leeds"],
+      "notes": "Based in Leeds, trading under 2 years, under 10 employees"
+    },
+    "effort_hours": 2,
+    "source_url": "https://leeds.gov.uk/business-support-and-advice/helping-your-business-grow",
+    "last_synced": "2025-01-01"
+  }
+]

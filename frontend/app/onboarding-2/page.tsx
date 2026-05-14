@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronLeft, ArrowRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const sections = [
   {
@@ -25,6 +26,7 @@ const sections = [
 ]
 
 export default function Onboarding2Page() {
+  const router = useRouter()
   const [values, setValues] = useState<Record<string, string>>(
     Object.fromEntries(sections.map((s) => [s.id, ""]))
   )
@@ -35,7 +37,7 @@ export default function Onboarding2Page() {
   return (
     <div className="h-[844px] bg-white flex flex-col px-6 pt-12 pb-10 overflow-y-auto">
       {/* Back button */}
-      <button className="w-10 h-10 rounded-full bg-[#F4D7E5] flex items-center justify-center mb-8 self-start flex-shrink-0">
+      <button onClick={() => router.push("/onboarding-1-playback")} className="w-10 h-10 rounded-full bg-[#F4D7E5] flex items-center justify-center mb-8 self-start flex-shrink-0">
         <ChevronLeft className="h-5 w-5 text-foreground" />
       </button>
 
@@ -69,7 +71,7 @@ export default function Onboarding2Page() {
       </div>
 
       {/* Confirm button */}
-      <button className="mt-6 w-full bg-foreground text-white font-medium py-4 rounded-2xl text-sm flex items-center justify-between px-6 flex-shrink-0">
+      <button onClick={() => router.push("/interstitial?next=/dashboard")} className="mt-6 w-full bg-foreground text-white font-medium py-4 rounded-2xl text-sm flex items-center justify-between px-6 flex-shrink-0">
         Confirm
         <ArrowRight className="h-4 w-4" />
       </button>

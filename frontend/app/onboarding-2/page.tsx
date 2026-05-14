@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronLeft, ArrowRight } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { useProfile } from "@/lib/profile-context"
 
 const sections = [
   {
@@ -27,6 +28,8 @@ const sections = [
 
 export default function Onboarding2Page() {
   const router = useRouter()
+  const { active } = useProfile()
+  const name = active.user_provided.trading_name
   const [values, setValues] = useState<Record<string, string>>(
     Object.fromEntries(sections.map((s) => [s.id, ""]))
   )
@@ -49,7 +52,7 @@ export default function Onboarding2Page() {
 
       {/* Heading */}
       <h1 className="text-3xl font-semibold text-foreground tracking-tight leading-snug mb-8 flex-shrink-0">
-        Tell us about<br />NorthLight Studio's<br />upcoming ambitions.
+        Tell us about<br />{name}'s<br />upcoming ambitions.
       </h1>
 
       {/* Sections */}

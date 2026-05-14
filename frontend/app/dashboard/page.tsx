@@ -1,6 +1,9 @@
+"use client"
+
 import { TrendingUp, Clock, Star } from "lucide-react"
 import { BottomNav } from "@/components/bottom-nav"
 import { Card } from "@/components/ui/card"
+import { useProfile } from "@/lib/profile-context"
 
 const quickActions = [
   {
@@ -36,6 +39,9 @@ const recentSchemes = [
 ]
 
 export default function DashboardPage() {
+  const { active } = useProfile()
+  const name = active.user_provided.trading_name
+
   return (
     <div className="min-h-full bg-white pb-24">
       {/* Logo */}
@@ -49,7 +55,7 @@ export default function DashboardPage() {
       <header className="px-6 pt-6 pb-8">
         <p className="text-2xl font-normal text-foreground mb-1">Good morning,</p>
         <h1 className="text-2xl font-semibold text-foreground tracking-tight">
-          Northlight Studio.
+          {name}.
         </h1>
       </header>
 

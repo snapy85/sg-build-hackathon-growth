@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronLeft, Check } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { useProfile } from "@/lib/profile-context"
 
 const services = [
   { id: "govuk", name: "GOV.UK", description: "Government services & guidance" },
@@ -12,6 +13,8 @@ const services = [
 
 export default function OnboardingPage() {
   const router = useRouter()
+  const { active } = useProfile()
+  const name = active.user_provided.trading_name
   const [selected, setSelected] = useState<string[]>([])
 
   const toggle = (id: string) => {
@@ -35,7 +38,7 @@ export default function OnboardingPage() {
       </div>
 
       <h1 className="text-2xl font-semibold text-foreground tracking-tight mb-2">
-        Help us know more about NorthLight Studio.
+        Help us know more about {name}.
       </h1>
       <p className="text-sm text-muted-foreground mb-8">
         Tap to connect with following services

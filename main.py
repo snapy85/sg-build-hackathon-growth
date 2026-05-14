@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 import database
-from routers import business, history, identify, match, plan, schemes
+from routers import business, history, match, plan, schemes
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -28,7 +28,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(identify.router, prefix="/api")
 app.include_router(business.router, prefix="/api")
 app.include_router(schemes.router, prefix="/api")
 app.include_router(match.router, prefix="/api")

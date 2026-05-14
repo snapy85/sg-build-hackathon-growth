@@ -87,7 +87,7 @@ async def create_plan(
             raise HTTPException(status_code=404, detail=f"Scheme '{sid}' not found")
         selected_schemes.append(scheme)
 
-    ch_id = user["companies_house_id"]
+    ch_id = user["profile_id"]
     profile_data = db.get_business_profile(ch_id)
     business = BusinessProfile(**profile_data) if profile_data else None
 

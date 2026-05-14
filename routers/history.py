@@ -44,7 +44,7 @@ def _summarise(action: str, output_data) -> dict:
 
 @router.get("/history", response_model=list[HistorySummary])
 async def get_history(user: dict = Depends(require_user)):
-    rows = db.get_history(user["companies_house_id"])
+    rows = db.get_history(user["profile_id"])
     return [
         HistorySummary(
             id=row["id"],
@@ -61,7 +61,7 @@ async def get_interaction(
     interaction_id: int,
     user: dict = Depends(require_user),
 ):
-    row = db.get_interaction(user["companies_house_id"], interaction_id)
+    row = db.get_interaction(user["profile_id"], interaction_id)
     if not row:
         raise HTTPException(status_code=404, detail="Interaction not found")
 

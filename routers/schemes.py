@@ -56,7 +56,7 @@ async def get_scheme(
 
     if user:
         # Session present — load profile and ask Claude for a personalised summary
-        profile_data = db.get_business_profile(user["companies_house_id"])
+        profile_data = db.get_business_profile(user["profile_id"])
         business = BusinessProfile(**profile_data) if profile_data else None
         plain_english_summary = await translate_scheme(scheme, business)
     else:

@@ -142,10 +142,10 @@ async def match_schemes(
     if not user:
         raise HTTPException(status_code=401, detail="Authentication required")
 
-    ch_id = user["companies_house_id"]
-    profile_data = db.get_business_profile(ch_id)
+    profile_id = user["profile_id"]
+    profile_data = db.get_business_profile(profile_id)
     if not profile_data:
-        raise HTTPException(status_code=404, detail="No business profile found. Call /api/identify first.")
+        raise HTTPException(status_code=404, detail="No business profile found.")
 
     business = BusinessProfile(**profile_data)
     schemes = load_schemes()
@@ -154,9 +154,9 @@ async def match_schemes(
     sorted_results = _sort_results(results)
 
     db.save_interaction(
-        ch_id,
+        profile_id,
         "match",
-        {"companies_house_id": ch_id},
+        {"profile_id": profile_id},
         [r.model_dump() for r in sorted_results],
     )
 

@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.get("/business/me", response_model=BusinessProfile)
 async def get_my_business(user: dict = Depends(require_user)):
-    profile = db.get_business_profile(user["companies_house_id"])
+    profile = db.get_business_profile(user["profile_id"])
     if not profile:
         raise HTTPException(status_code=404, detail="No business profile found")
     return BusinessProfile(**profile)
@@ -21,7 +21,7 @@ async def update_my_business(
     user: dict = Depends(require_user),
 ):
     """Update manually-provided fields (goals, revenue, headcount)."""
-    profile = db.get_business_profile(user["companies_house_id"])
+    profile = db.get_business_profile(user["profile_id"])
     if not profile:
         raise HTTPException(status_code=404, detail="No business profile found")
 
@@ -32,5 +32,5 @@ async def update_my_business(
     if update.goals is not None:
         profile["goals"] = update.goals
 
-    db.upsert_business_profile(user["companies_house_id"], profile)
+    db.upsert_business_profile(user["profile_id"], profile)
     return BusinessProfile(**profile)

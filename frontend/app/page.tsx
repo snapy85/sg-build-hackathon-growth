@@ -40,7 +40,7 @@ const recentSchemes = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-full bg-background pb-24">
+    <div className="min-h-full bg-white pb-24">
       {/* Logo */}
       <div className="flex justify-center pt-12 pb-2">
         <span className="text-xl font-black tracking-tight text-foreground">

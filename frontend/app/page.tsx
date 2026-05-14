@@ -41,8 +41,15 @@ const recentSchemes = [
 export default function HomePage() {
   return (
     <div className="min-h-full bg-background pb-24">
+      {/* Logo */}
+      <div className="flex justify-center pt-12 pb-2">
+        <span className="text-xl font-black tracking-tight text-foreground">
+          Funding<span className="text-accent">Fit</span>
+        </span>
+      </div>
+
       {/* Header */}
-      <header className="px-6 pt-12 pb-8">
+      <header className="px-6 pt-6 pb-8">
         <p className="text-sm text-muted-foreground mb-1">Good morning,</p>
         <h1 className="text-2xl font-semibold text-foreground tracking-tight">
           Northlight Studio.

@@ -16,11 +16,11 @@ _REGION_ORDER = {"leeds": 0, "west_yorkshire": 0, "national": 1}
 
 _MOCK_RESULTS: List[SchemeResult] = [
     SchemeResult(
-        scheme_id="adventure-grant",
+        scheme_id="ad-venture-grant",
         name="AD:VENTURE Grant",
-        funder="West Yorkshire Combined Authority",
+        provider="West Yorkshire Combined Authority",
         region="west_yorkshire",
-        amount_display="Up to £5,000",
+        funding_display="Up to £5,000",
         effort_hours=2,
         fit="strong_match",
         fit_reason="Trading under 3 years in West Yorkshire in an eligible creative sector.",
@@ -29,17 +29,17 @@ _MOCK_RESULTS: List[SchemeResult] = [
             "and professional services sectors. It can fund equipment, marketing, and "
             "other growth costs up to £5,000."
         ),
-        eligibility_met=["Based in West Yorkshire", "Trading under 3 years", "Eligible sector (creative services)"],
+        eligibility_met=["Based in West Yorkshire", "Trading under 3 years", "Eligible sector"],
         eligibility_unmet=[],
-        source_url="https://ad-venture.org.uk",
+        url="https://ad-venture.org.uk",
     ),
     SchemeResult(
         scheme_id="wy-growth-fund",
         name="WY Growth Fund",
-        funder="West Yorkshire Combined Authority",
+        provider="West Yorkshire Combined Authority",
         region="west_yorkshire",
-        amount_display="Up to £25,000",
-        effort_hours=4,
+        funding_display="Up to £25,000",
+        effort_hours=6,
         fit="possible",
         fit_reason="Based in West Yorkshire and trading over 1 year, but a scaling plan and financial projections will need to be demonstrated.",
         plain_english_summary=(
@@ -48,79 +48,78 @@ _MOCK_RESULTS: List[SchemeResult] = [
         ),
         eligibility_met=["Based in West Yorkshire", "Trading over 1 year"],
         eligibility_unmet=["Scaling plan required", "Financial projections required"],
-        source_url="https://westyorks-ca.gov.uk/business/",
+        url="https://westyorks-ca.gov.uk/business",
     ),
     SchemeResult(
-        scheme_id="startup-loan",
-        name="Start Up Loan",
-        funder="British Business Bank",
+        scheme_id="start-up-loans",
+        name="Start Up Loans",
+        provider="British Business Bank",
         region="national",
-        amount_display="£500–£25,000",
-        effort_hours=3,
+        funding_display="£500–£25,000",
+        effort_hours=4,
         fit="strong_match",
-        fit_reason="UK-based and trading under 2 years, meeting the core eligibility criteria.",
+        fit_reason="UK-based and trading under 3 years, meeting the core eligibility criteria.",
         plain_english_summary=(
-            "A government-backed personal loan for new UK businesses trading under two years. "
+            "A government-backed personal loan for new UK businesses trading under three years. "
             "The most important thing to know is that it involves a personal credit check."
         ),
-        eligibility_met=["UK-based", "Trading under 2 years"],
+        eligibility_met=["UK-based", "Trading under 3 years"],
         eligibility_unmet=["Personal credit check required"],
-        source_url="https://startuploans.co.uk",
+        url="https://www.startuploans.co.uk",
     ),
     SchemeResult(
-        scheme_id="leeds-council-grant",
-        name="Leeds City Council Business Support Grant",
-        funder="Leeds City Council",
+        scheme_id="leeds-city-council-grants",
+        name="Leeds City Council Business Grants",
+        provider="Leeds City Council",
         region="leeds",
-        amount_display="Up to £2,500",
-        effort_hours=2,
+        funding_display="Varies by scheme",
+        effort_hours=3,
         fit="strong_match",
-        fit_reason="Based in Leeds, trading under 2 years, and has fewer than 10 employees.",
+        fit_reason="Based in Leeds with a qualifying early-stage business.",
         plain_english_summary=(
-            "A small grant for new businesses based in Leeds with fewer than 10 employees. "
-            "It covers early-stage costs like equipment or marketing."
+            "A range of grants for businesses based in Leeds, typically supporting "
+            "local job creation and early-stage growth. Eligibility varies by scheme."
         ),
-        eligibility_met=["Based in Leeds", "Trading under 2 years", "Under 10 employees"],
-        eligibility_unmet=[],
-        source_url="https://leeds.gov.uk/business-support-and-advice/helping-your-business-grow",
+        eligibility_met=["Based in Leeds"],
+        eligibility_unmet=["Check current live schemes on Leeds City Council website"],
+        url="https://www.leeds.gov.uk/business-support-and-advice/helping-your-business-grow",
     ),
     SchemeResult(
-        scheme_id="help-to-grow",
+        scheme_id="help-to-grow-management",
         name="Help to Grow: Management",
-        funder="Department for Business & Trade",
+        provider="Department for Business & Trade",
         region="national",
-        amount_display="Subsidised leadership course (£750 government contribution)",
+        funding_display="90% subsidised leadership programme",
         effort_hours=1,
         fit="not_suitable",
-        fit_reason="Requires 5 or more employees; this business currently has 1 employee.",
+        fit_reason="Requires 5 or more employees; this business currently has 1.",
         plain_english_summary=(
-            "A subsidised business leadership course for small business owners with at least 5 staff. "
+            "A subsidised 12-week leadership programme for small business owners with at least 5 staff. "
             "Not available to sole traders or businesses below the 5-employee threshold."
         ),
-        eligibility_met=["Trading over 1 year", "Not in public sector"],
+        eligibility_met=["Trading over 1 year", "UK-based"],
         eligibility_unmet=["Requires 5+ employees (currently 1)"],
-        source_url="https://helptogrow.campaign.gov.uk",
+        url="https://helptogrow.campaign.gov.uk",
     ),
     SchemeResult(
         scheme_id="rd-tax-relief",
-        name="R&D Tax Relief (HMRC)",
-        funder="HMRC",
+        name="R&D Tax Relief",
+        provider="HMRC",
         region="national",
-        amount_display="Up to 33% of qualifying R&D spend reclaimed",
-        effort_hours=5,
+        funding_display="Tax credit on qualifying R&D expenditure",
+        effort_hours=8,
         fit="not_suitable",
-        fit_reason="Only available to limited companies; this business is a sole trader with no indicated qualifying R&D spend.",
+        fit_reason="Only available to limited companies; this business is a sole trader.",
         plain_english_summary=(
-            "A tax relief scheme for limited companies that spend money on innovation. "
-            "Sole traders cannot claim this relief, and an accountant is typically required."
+            "A tax relief scheme for limited companies that spend money on research and development. "
+            "Sole traders cannot claim this relief and an accountant is typically required."
         ),
         eligibility_met=[],
         eligibility_unmet=[
             "Limited company required (business is sole trader)",
             "Qualifying R&D spend required",
-            "Accountant involvement required",
         ],
-        source_url="https://gov.uk/guidance/corporation-tax-research-and-development-rd-relief",
+        url="https://www.gov.uk/guidance/corporation-tax-research-and-development-rd-relief",
     ),
 ]
 

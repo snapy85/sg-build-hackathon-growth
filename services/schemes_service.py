@@ -4,7 +4,6 @@ from typing import Optional
 
 _SCHEMES_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "schemes.json")
 
-# Postcode prefix → region mapping
 _LEEDS_PREFIXES = {"LS"}
 _WEST_YORKSHIRE_PREFIXES = {"LS", "BD", "HX", "HD", "WF"}
 
@@ -21,6 +20,23 @@ def get_scheme_by_id(scheme_id: str) -> Optional[dict]:
     return None
 
 
+def infer_region(scheme: dict) -> str:
+    """
+    Derives a scheme's geographic scope from its eligibility criteria.
+    Returns "leeds", "west_yorkshire", or "national".
+    """
+    for item in scheme.get("eligibility", []):
+        if item.get("type") == "geography":
+            criterion = item.get("criterion", "").lower()
+            if "leeds" in criterion:
+                return "leeds"
+            if "west yorkshire" in criterion:
+                return "west_yorkshire"
+            if "yorkshire" in criterion:
+                return "west_yorkshire"
+    return "national"
+
+
 def filter_by_region(schemes: list[dict], postcode: str) -> list[dict]:
     prefix = postcode[:2].upper().strip()
 
@@ -30,4 +46,4 @@ def filter_by_region(schemes: list[dict], postcode: str) -> list[dict]:
     if prefix in _WEST_YORKSHIRE_PREFIXES:
         matched_regions.add("west_yorkshire")
 
-    return [s for s in schemes if s.get("region") in matched_regions]
+    return [s for s in schemes if infer_region(s) in matched_regions]

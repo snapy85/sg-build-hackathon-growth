@@ -95,6 +95,7 @@ async def generate_fit_signals(
         )
         fit_data = json.loads(raw_response)
 
+        from services.schemes_service import infer_region
         scheme_map = {s["id"]: s for s in schemes}
         results = []
         for item in fit_data:
@@ -104,16 +105,16 @@ async def generate_fit_signals(
                 SchemeResult(
                     scheme_id=sid,
                     name=scheme.get("name", ""),
-                    funder=scheme.get("funder", ""),
-                    region=scheme.get("region", ""),
-                    amount_display=scheme.get("amount_display", ""),
-                    effort_hours=scheme.get("effort_hours", 0),
+                    provider=scheme.get("provider", ""),
+                    region=infer_region(scheme),
+                    funding_display=scheme.get("funding", {}).get("display", ""),
+                    effort_hours=scheme.get("effort", {}).get("hours", 0),
                     fit=item["fit"],
                     fit_reason=item["fit_reason"],
                     plain_english_summary=item["plain_english_summary"],
                     eligibility_met=item.get("eligibility_met", []),
                     eligibility_unmet=item.get("eligibility_unmet", []),
-                    source_url=scheme.get("source_url", ""),
+                    url=scheme.get("url", ""),
                 )
             )
         return results

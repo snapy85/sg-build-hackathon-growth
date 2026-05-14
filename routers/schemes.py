@@ -8,6 +8,18 @@ from services.claude_service import translate_scheme
 from services.identity_service import optional_user
 from services.schemes_service import get_scheme_by_id, load_schemes
 
+# How GET /api/schemes/{scheme_id} works:
+#
+# 1. get_scheme_by_id() opens data/schemes.json and scans for a scheme whose
+#    "id" field matches the path parameter. Returns the raw dict or None.
+#
+# 2. If no X-Session-ID header is present (user is anonymous), the scheme's
+#    own "summary" field is returned as-is — no Claude call, no API key needed.
+#
+# 3. If an X-Session-ID header IS present, the user's business profile is
+#    loaded from SQLite and passed to Claude's translate_scheme() function,
+#    which rewrites the summary personalised to that specific business.
+
 router = APIRouter()
 
 
@@ -18,11 +30,12 @@ async def list_schemes():
         SchemeSummary(
             scheme_id=s["id"],
             name=s["name"],
-            funder=s["funder"],
-            region=s["region"],
-            amount_display=s["amount_display"],
-            effort_hours=s["effort_hours"],
-            source_url=s["source_url"],
+            provider=s["provider"],
+            type=s["type"],
+            repayable=s["repayable"],
+            funding_display=s["funding"]["display"],
+            effort_display=s["effort"]["display"],
+            url=s["url"],
         )
         for s in load_schemes()
     ]
@@ -41,24 +54,29 @@ async def get_scheme(
     if not scheme:
         raise HTTPException(status_code=404, detail=f"Scheme '{scheme_id}' not found")
 
-    business = None
     if user:
+        # Session present — load profile and ask Claude for a personalised summary
         profile_data = db.get_business_profile(user["companies_house_id"])
-        if profile_data:
-            business = BusinessProfile(**profile_data)
-
-    summary = await translate_scheme(scheme, business)
+        business = BusinessProfile(**profile_data) if profile_data else None
+        plain_english_summary = await translate_scheme(scheme, business)
+    else:
+        # No session — return the scheme's own summary directly from schemes.json
+        plain_english_summary = scheme["summary"]
 
     return SchemeDetail(
         scheme_id=scheme["id"],
         name=scheme["name"],
-        funder=scheme["funder"],
-        region=scheme["region"],
-        amount_display=scheme["amount_display"],
-        max_amount=scheme.get("max_amount"),
-        effort_hours=scheme["effort_hours"],
-        source_url=scheme["source_url"],
-        last_synced=scheme.get("last_synced"),
-        eligibility=scheme.get("eligibility", {}),
-        plain_english_summary=summary,
+        provider=scheme["provider"],
+        url=scheme["url"],
+        type=scheme["type"],
+        repayable=scheme["repayable"],
+        funding=scheme["funding"],
+        summary=scheme["summary"],
+        eligibility=scheme["eligibility"],
+        documents=scheme.get("documents", []),
+        restrictions=scheme.get("restrictions", []),
+        effort=scheme["effort"],
+        timeline=scheme["timeline"],
+        last_verified=scheme.get("last_verified"),
+        plain_english_summary=plain_english_summary,
     )

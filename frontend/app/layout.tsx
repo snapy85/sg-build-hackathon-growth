@@ -36,8 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background">
-      <body className="font-sans antialiased">
-        {children}
+      <body className="font-sans antialiased bg-gray-300 min-h-screen flex items-start justify-center py-8">
+        <div className="w-[390px] min-h-[844px] bg-background shadow-2xl rounded-3xl overflow-hidden relative">
+          {children}
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

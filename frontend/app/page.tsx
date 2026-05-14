@@ -40,7 +40,7 @@ const recentSchemes = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-full bg-background pb-24">
       {/* Header */}
       <header className="px-6 pt-12 pb-8">
         <p className="text-sm text-muted-foreground mb-1">Good morning,</p>

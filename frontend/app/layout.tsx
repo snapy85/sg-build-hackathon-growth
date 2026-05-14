@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ProfileProvider } from '@/lib/profile-context'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -37,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased bg-gray-300 min-h-screen flex items-start justify-center py-8">
-        <div className="w-[390px] min-h-[844px] bg-white shadow-2xl rounded-3xl overflow-hidden relative">
-          {children}
-        </div>
+        <ProfileProvider>
+          <div className="w-[390px] min-h-[844px] bg-white shadow-2xl rounded-3xl overflow-hidden relative">
+            {children}
+          </div>
+        </ProfileProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

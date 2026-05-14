@@ -1,0 +1,289 @@
+[
+  {
+    "profile_id": "profile-northlight-001",
+
+    "gov_uk_one_login": {
+      "sub": "urn:fdc:gov.uk:2022:9a8b7c6d5e4f3a2b1c0d",
+      "email": "hello@northlightstudio.co.uk",
+      "email_verified": true,
+      "phone_number": "+447700900123",
+      "phone_verified": true,
+      "identity_verified": true,
+      "verification_level": "medium",
+      "created_at": "2026-05-13T09:00:00Z"
+    },
+
+    "user_provided": {
+      "trading_name": "Northlight Studio",
+      "owner_age": null
+    },
+
+    "companies_house": {
+      "company_number": "09876543",
+      "legal_name": "Northlight Studio Ltd",
+      "company_status": "active",
+      "company_type": "ltd",
+      "incorporation_date": "2022-01-18",
+      "sic_codes": ["74100"],
+      "sic_descriptions": ["Specialised design activities"],
+      "registered_office_address": {
+        "address_line_1": "Flat 7, 42 Meanwood Road",
+        "locality": "Leeds",
+        "postal_code": "LS7 2LF",
+        "country": "England"
+      },
+      "directors": [
+        {
+          "name": "SMITH, Jamie",
+          "appointed_on": "2022-01-18",
+          "resigned_on": null
+        }
+      ]
+    },
+
+    "hmrc": {
+      "utr": "1234567890",
+      "mtd_income_source_id": "XAIS00000000001",
+      "legal_structure": "limited_company",
+      "vat_registered": false,
+      "vat_number": null,
+      "self_assessment": {
+        "tax_year": "2024-25",
+        "turnover": 28400,
+        "currency": "GBP"
+      },
+      "paye": {
+        "paye_reference": "123/AB12345",
+        "employees_on_payroll": 1
+      }
+    },
+
+    "derived": {
+      "legal_structure": "limited_company",
+      "sector": "creative",
+      "region": "West Yorkshire",
+      "trading_age_years": 2.4
+    },
+
+    "goals": [
+      {
+        "session_id": "session-001",
+        "timestamp": "2026-05-13T09:15:00Z",
+        "raw": [
+          {
+            "prompt": "growth_goal",
+            "response": "I'm getting more clients than I can handle on my own. I want to hire a junior designer and move into a co-working space so I can take on bigger branding projects."
+          },
+          {
+            "prompt": "funding_need",
+            "response": "About £3k for Adobe Creative Cloud and some design tools, maybe £2k for a proper portfolio site, and the rest for marketing. Total around £5-6k."
+          },
+          {
+            "prompt": "constraints",
+            "response": "I'd prefer not to take on a loan right now — I'm still building up cash reserves. Grants would be ideal."
+          }
+        ],
+        "extracted": {
+          "funding_amount": 5500,
+          "currency": "GBP",
+          "intended_spend": [
+            "Adobe Creative Cloud and design software (~£3,000)",
+            "Portfolio website (~£2,000)",
+            "Marketing (~£500)"
+          ],
+          "preference": "grant",
+          "debt_averse": true,
+          "growth_stage": "early",
+          "open_to_small_amounts": null,
+          "timeline_months": null
+        }
+      }
+    ]
+  },
+
+  {
+    "profile_id": "profile-breadbloom-001",
+
+    "gov_uk_one_login": {
+      "sub": "urn:fdc:gov.uk:2022:1a2b3c4d5e6f7a8b9c0d",
+      "email": "hello@breadandbloom.co.uk",
+      "email_verified": true,
+      "phone_number": "+447700900456",
+      "phone_verified": true,
+      "identity_verified": true,
+      "verification_level": "medium",
+      "created_at": "2026-05-13T10:15:00Z"
+    },
+
+    "user_provided": {
+      "trading_name": "Bread & Bloom Coffee",
+      "owner_age": null
+    },
+
+    "companies_house": {
+      "company_number": "12345678",
+      "legal_name": "Bread & Bloom Coffee Ltd",
+      "company_status": "active",
+      "company_type": "ltd",
+      "incorporation_date": "2023-03-07",
+      "sic_codes": ["56103"],
+      "sic_descriptions": ["Take-away food shops and mobile food stands"],
+      "registered_office_address": {
+        "address_line_1": "14 Kirkstall Road",
+        "locality": "Leeds",
+        "postal_code": "LS5 3AE",
+        "country": "England"
+      },
+      "directors": [
+        {
+          "name": "PATEL, Priya",
+          "appointed_on": "2023-03-07",
+          "resigned_on": null
+        },
+        {
+          "name": "PATEL, Rohan",
+          "appointed_on": "2023-03-07",
+          "resigned_on": null
+        }
+      ]
+    },
+
+    "hmrc": {
+      "utr": "9876543210",
+      "mtd_income_source_id": "XAIS00000000002",
+      "legal_structure": "limited_company",
+      "vat_registered": true,
+      "vat_number": "GB123456789",
+      "self_assessment": {
+        "tax_year": "2024-25",
+        "turnover": 67200,
+        "currency": "GBP"
+      },
+      "paye": {
+        "paye_reference": "456/CD67890",
+        "employees_on_payroll": 3
+      }
+    },
+
+    "derived": {
+      "legal_structure": "limited_company",
+      "sector": "hospitality",
+      "region": "West Yorkshire",
+      "trading_age_years": 1.2
+    },
+
+    "goals": [
+      {
+        "session_id": "session-001",
+        "timestamp": "2026-05-13T10:30:00Z",
+        "raw": [
+          {
+            "prompt": "growth_goal",
+            "response": "We've got a waiting list for tables every weekend. We need to knock through to the space next door and add 12 more seats, plus upgrade the coffee machine."
+          },
+          {
+            "prompt": "funding_need",
+            "response": "£15k for the lease extension and building work, £8k for a new espresso machine and grinder, and £2k for staff training. Total around £25k."
+          },
+          {
+            "prompt": "constraints",
+            "response": "We can do a loan if needed, especially since this expansion will pay for itself quickly. Need the money in the next 2-3 months."
+          }
+        ],
+        "extracted": {
+          "funding_amount": 25000,
+          "currency": "GBP",
+          "intended_spend": [
+            "Lease extension and building work (~£15,000)",
+            "New espresso machine and grinder (~£8,000)",
+            "Staff training (~£2,000)"
+          ],
+          "preference": "loan_or_grant",
+          "debt_averse": false,
+          "growth_stage": "scaling",
+          "open_to_small_amounts": null,
+          "timeline_months": 3
+        }
+      }
+    ]
+  },
+
+  {
+    "profile_id": "profile-movefit-001",
+
+    "gov_uk_one_login": {
+      "sub": "urn:fdc:gov.uk:2022:5f6e7d8c9b0a1f2e3d4c",
+      "email": "alex@movefitleeds.co.uk",
+      "email_verified": true,
+      "phone_number": "+447700900789",
+      "phone_verified": false,
+      "identity_verified": true,
+      "verification_level": "medium",
+      "created_at": "2026-05-13T11:30:00Z"
+    },
+
+    "user_provided": {
+      "trading_name": "MoveFit Leeds",
+      "owner_age": null
+    },
+
+    "companies_house": null,
+
+    "hmrc": {
+      "utr": "5432167890",
+      "mtd_income_source_id": "XAIS00000000003",
+      "legal_structure": "sole_trader",
+      "vat_registered": false,
+      "vat_number": null,
+      "self_assessment": {
+        "tax_year": "2024-25",
+        "turnover": 18500,
+        "currency": "GBP",
+        "trading_start_date": "2024-09-12"
+      },
+      "paye": null
+    },
+
+    "derived": {
+      "legal_structure": "sole_trader",
+      "sector": "health_and_fitness",
+      "region": "West Yorkshire",
+      "trading_age_years": 0.5
+    },
+
+    "goals": [
+      {
+        "session_id": "session-001",
+        "timestamp": "2026-05-13T11:45:00Z",
+        "raw": [
+          {
+            "prompt": "growth_goal",
+            "response": "I want to build an online coaching platform so I'm not just trading hours for money. Maybe film workout videos and sell monthly subscriptions."
+          },
+          {
+            "prompt": "funding_need",
+            "response": "£2k for equipment — kettlebells, resistance bands, yoga mats. £500 for insurance and £1k for Facebook ads. Total around £3.5k."
+          },
+          {
+            "prompt": "constraints",
+            "response": "I'm only 6 months in, so I don't know if banks would lend to me yet. I'm okay with smaller amounts if they're easier to get."
+          }
+        ],
+        "extracted": {
+          "funding_amount": 3500,
+          "currency": "GBP",
+          "intended_spend": [
+            "Equipment — kettlebells, resistance bands, yoga mats (~£2,000)",
+            "Insurance (~£500)",
+            "Facebook ads (~£1,000)"
+          ],
+          "preference": "grant",
+          "debt_averse": false,
+          "growth_stage": "early",
+          "open_to_small_amounts": true,
+          "timeline_months": null
+        }
+      }
+    ]
+  }
+]

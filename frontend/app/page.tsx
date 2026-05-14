@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { LogoBar } from "@/components/logo-bar"
 
 const partners = ["GOV.UK", "Companies House", "HMRC"]
 
@@ -11,9 +12,7 @@ export default function HomePage() {
   return (
     <div className="h-[844px] bg-white flex flex-col px-6 pt-16 pb-10">
       <div className="mb-16">
-        <span className="text-xl font-black tracking-tight text-foreground">
-          Funding<span className="text-accent">Fit</span>
-        </span>
+        <LogoBar />
       </div>
 
       <div className="flex-1">

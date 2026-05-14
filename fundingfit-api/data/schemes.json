@@ -1,0 +1,600 @@
+[
+  {
+    "id": "ad-venture-grant",
+    "name": "AD:VENTURE Grant",
+    "provider": "West Yorkshire Combined Authority",
+    "url": "https://ad-venture.org.uk",
+    "type": "grant",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": 5000,
+      "currency": "GBP",
+      "display": "Up to \u00a35,000"
+    },
+    "summary": "Grant for early-stage businesses in West Yorkshire within their first 3 years of trading. Covers growth-related costs including equipment, software, marketing, and professional services. No repayment required.",
+    "eligibility": [
+      {
+        "criterion": "Registered and operating in West Yorkshire",
+        "type": "geography"
+      },
+      {
+        "criterion": "Trading for under 3 years at point of application",
+        "type": "trading_age"
+      },
+      {
+        "criterion": "Fewer than 10 employees",
+        "type": "size"
+      },
+      {
+        "criterion": "Some professional services sectors excluded \u2014 confirm with provider",
+        "type": "sector"
+      }
+    ],
+    "documents": [
+      "Last 6 months' bank statements",
+      "Short business description",
+      "Proof of trading address",
+      "Quote for intended spend",
+      "Photo ID"
+    ],
+    "restrictions": [
+      "Cannot be used to pay the business owner's salary",
+      "Cannot be used to repay existing debt",
+      "Budget is finite and allocated annually \u2014 not guaranteed year-round"
+    ],
+    "effort": {
+      "hours": 2,
+      "display": "~2 hrs",
+      "level": "low"
+    },
+    "timeline": {
+      "decision": "4\u20136 weeks",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "start-up-loans",
+    "name": "Start Up Loans",
+    "provider": "British Business Bank",
+    "url": "https://www.startuploans.co.uk",
+    "type": "loan",
+    "repayable": true,
+    "funding": {
+      "min": 500,
+      "max": 25000,
+      "currency": "GBP",
+      "display": "\u00a3500\u2013\u00a325,000"
+    },
+    "summary": "Government-backed personal loan for businesses under 3 years old. Fixed 6% annual interest rate with 12 months interest-free at the start. Includes 12 months of free mentoring.",
+    "eligibility": [
+      {
+        "criterion": "UK-based business",
+        "type": "geography"
+      },
+      {
+        "criterion": "Trading for under 3 years at point of application",
+        "type": "trading_age"
+      },
+      {
+        "criterion": "Personal credit check required",
+        "type": "financial"
+      }
+    ],
+    "documents": [
+      "Last 6 months' bank statements",
+      "Photo ID",
+      "Business plan",
+      "Cash flow forecast (12 months)"
+    ],
+    "restrictions": [
+      "Maximum \u00a325,000 per individual applicant",
+      "Personal liability \u2014 loan is made to the individual, not the company",
+      "Repayments begin after the 12-month interest-free period"
+    ],
+    "effort": {
+      "hours": 4,
+      "display": "~4 hrs",
+      "level": "medium"
+    },
+    "timeline": {
+      "decision": "2\u20134 weeks",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "help-to-grow-digital",
+    "name": "Help to Grow: Digital",
+    "provider": "Department for Business & Trade",
+    "url": "https://helptogrow.campaign.gov.uk",
+    "type": "discount",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": 5000,
+      "currency": "GBP",
+      "display": "50% discount on approved software, up to \u00a35,000"
+    },
+    "summary": "Government-funded 50% discount on approved digital software \u2014 covering accounting, CRM, e-commerce, and productivity tools. Applied at point of purchase from an approved supplier, not reimbursed afterwards.",
+    "eligibility": [
+      {
+        "criterion": "UK-based business",
+        "type": "geography"
+      },
+      {
+        "criterion": "Fewer than 250 employees",
+        "type": "size"
+      },
+      {
+        "criterion": "Trading for over 12 months",
+        "type": "trading_age"
+      }
+    ],
+    "documents": [
+      "Proof of UK trading",
+      "Companies House or HMRC registration number"
+    ],
+    "restrictions": [
+      "Only valid for software on the government-approved catalogue",
+      "Discount applied at purchase \u2014 not a cash payment or reimbursement",
+      "One redemption per business"
+    ],
+    "effort": {
+      "hours": 1,
+      "display": "~1 hr",
+      "level": "low"
+    },
+    "timeline": {
+      "decision": "Same day",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "wy-growth-fund",
+    "name": "WY Growth Fund",
+    "provider": "West Yorkshire Combined Authority",
+    "url": "https://westyorks-ca.gov.uk/business",
+    "type": "grant",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": 25000,
+      "currency": "GBP",
+      "display": "Up to \u00a325,000"
+    },
+    "summary": "Grant for growing businesses in West Yorkshire looking to scale, create jobs, or expand capacity. Aimed at businesses with a proven model and demonstrable growth trajectory rather than early-stage startups.",
+    "eligibility": [
+      {
+        "criterion": "Registered and operating in West Yorkshire",
+        "type": "geography"
+      },
+      {
+        "criterion": "Demonstrated trading history and revenue",
+        "type": "financial"
+      },
+      {
+        "criterion": "Evidence of growth potential or job creation",
+        "type": "intent"
+      },
+      {
+        "criterion": "Typically expects turnover of \u00a350,000 or above \u2014 confirm with provider",
+        "type": "size"
+      }
+    ],
+    "documents": [
+      "Last 12 months' bank statements",
+      "Most recent filed accounts or management accounts",
+      "Business growth plan",
+      "Evidence of demand (e.g. confirmed orders, waiting list, contracts)",
+      "Cash flow forecast (12 months)"
+    ],
+    "restrictions": [
+      "Cannot be used for general working capital or day-to-day running costs",
+      "Spend must be tied to a specific growth or job-creation objective"
+    ],
+    "effort": {
+      "hours": 6,
+      "display": "~6 hrs",
+      "level": "high"
+    },
+    "timeline": {
+      "decision": "6\u20138 weeks",
+      "open": "Year-round, subject to budget availability"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "leeds-city-council-grants",
+    "name": "Leeds City Council Business Grants",
+    "provider": "Leeds City Council",
+    "url": "https://www.leeds.gov.uk/business-support-and-advice/helping-your-business-grow",
+    "type": "grant",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": null,
+      "currency": "GBP",
+      "display": "Varies by scheme"
+    },
+    "summary": "Leeds City Council offers a range of grant schemes for local businesses, with eligibility and funding amounts varying by programme. Schemes typically prioritise local job creation, neighbourhood economic development, and support for underrepresented founders.",
+    "eligibility": [
+      {
+        "criterion": "Based and operating in Leeds",
+        "type": "geography"
+      },
+      {
+        "criterion": "Eligibility criteria vary by individual scheme \u2014 check current availability",
+        "type": "intent"
+      }
+    ],
+    "documents": [
+      "Last 6 months' bank statements",
+      "Short business description",
+      "Proof of Leeds trading address"
+    ],
+    "restrictions": [
+      "Scheme availability and terms vary \u2014 restrictions depend on the specific grant applied for"
+    ],
+    "effort": {
+      "hours": 3,
+      "display": "~3 hrs",
+      "level": "medium"
+    },
+    "timeline": {
+      "decision": "Varies by scheme",
+      "open": "Varies \u2014 check Leeds City Council website for live schemes"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "creative-places-growth-fund",
+    "name": "Creative Places Growth Fund",
+    "provider": "West Yorkshire Combined Authority",
+    "url": "https://westyorks-ca.gov.uk/business",
+    "type": "grant",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": null,
+      "currency": "GBP",
+      "display": "Varies"
+    },
+    "summary": "Grant fund supporting businesses in West Yorkshire's creative industries. Aimed at growing the region's creative economy \u2014 arts, media, design, film, music, and related sectors.",
+    "eligibility": [
+      {
+        "criterion": "Registered and operating in West Yorkshire",
+        "type": "geography"
+      },
+      {
+        "criterion": "Operating in the creative industries sector (arts, media, design, film, music)",
+        "type": "sector"
+      },
+      {
+        "criterion": "Growth-oriented with a clear development objective",
+        "type": "intent"
+      }
+    ],
+    "documents": [
+      "Last 6 months' bank statements",
+      "Short business description",
+      "Portfolio or evidence of creative output",
+      "Description of intended spend and growth objective"
+    ],
+    "restrictions": [
+      "Restricted to creative industries \u2014 hospitality, retail, and general services are not eligible",
+      "Spend must support the creative output or growth of the business"
+    ],
+    "effort": {
+      "hours": 4,
+      "display": "~4 hrs",
+      "level": "medium"
+    },
+    "timeline": {
+      "decision": "Varies",
+      "open": "Check provider for current application windows"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "help-to-grow-management",
+    "name": "Help to Grow: Management",
+    "provider": "Department for Business & Trade",
+    "url": "https://helptogrow.campaign.gov.uk",
+    "type": "training",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": null,
+      "currency": "GBP",
+      "display": "90% subsidised leadership programme"
+    },
+    "summary": "Subsidised 12-week management and leadership programme delivered by UK business schools. Covers strategy, finance, marketing, and operations. Government covers 90% of the cost; businesses pay \u00a3750.",
+    "eligibility": [
+      {
+        "criterion": "UK-based business",
+        "type": "geography"
+      },
+      {
+        "criterion": "Trading for at least 1 year",
+        "type": "trading_age"
+      },
+      {
+        "criterion": "5 or more employees",
+        "type": "size"
+      },
+      {
+        "criterion": "Senior manager or director applying (not a sole trader without staff)",
+        "type": "intent"
+      }
+    ],
+    "documents": [
+      "Proof of employment (payroll records or HMRC submissions showing 5+ employees)",
+      "Photo ID",
+      "Companies House or HMRC registration number"
+    ],
+    "restrictions": [
+      "Programme fee of \u00a3750 payable by the business \u2014 not fully free",
+      "Applicant must be a senior manager or decision-maker within the business",
+      "Time commitment of approximately 50 hours over 12 weeks"
+    ],
+    "effort": {
+      "hours": 1,
+      "display": "~1 hr to apply",
+      "level": "low"
+    },
+    "timeline": {
+      "decision": "Rolling intake \u2014 cohort start dates vary by business school",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "business-enterprise-fund",
+    "name": "Business Enterprise Fund",
+    "provider": "Business Enterprise Fund",
+    "url": "https://www.bef.co.uk",
+    "type": "loan",
+    "repayable": true,
+    "funding": {
+      "min": 500,
+      "max": 150000,
+      "currency": "GBP",
+      "display": "\u00a3500\u2013\u00a3150,000"
+    },
+    "summary": "Community Development Finance Institution offering loans to businesses in Yorkshire and the Humber that may not qualify for high-street bank lending. Covers asset finance, working capital, and growth investment.",
+    "eligibility": [
+      {
+        "criterion": "Based in Yorkshire and the Humber",
+        "type": "geography"
+      },
+      {
+        "criterion": "Typically requires at least 12 months of trading history",
+        "type": "trading_age"
+      },
+      {
+        "criterion": "Must demonstrate ability to repay",
+        "type": "financial"
+      },
+      {
+        "criterion": "Viable business plan required",
+        "type": "intent"
+      }
+    ],
+    "documents": [
+      "Last 12 months' bank statements",
+      "Most recent filed accounts or management accounts",
+      "Business plan",
+      "Cash flow forecast",
+      "Photo ID",
+      "Details of any existing borrowing"
+    ],
+    "restrictions": [
+      "Loan product \u2014 full repayment required with interest",
+      "Interest rates vary depending on loan size and risk profile",
+      "Personal guarantee may be required for larger loan amounts"
+    ],
+    "effort": {
+      "hours": 5,
+      "display": "~5 hrs",
+      "level": "high"
+    },
+    "timeline": {
+      "decision": "2\u20136 weeks depending on loan size",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "business-ip-centre-leeds",
+    "name": "Business & IP Centre Leeds",
+    "provider": "Leeds Central Library / British Library Network",
+    "url": "https://www.leeds.gov.uk",
+    "type": "support",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": null,
+      "currency": null,
+      "display": "Free"
+    },
+    "summary": "Free business support, advice, and resources available at Leeds Central Library. Part of the British Library's Business & IP Centre network. Includes access to market research databases, one-to-one advisor sessions, workshops, and IP guidance.",
+    "eligibility": [
+      {
+        "criterion": "Open to anyone starting or growing a business in Leeds",
+        "type": "geography"
+      }
+    ],
+    "documents": [],
+    "restrictions": [
+      "Not a funding programme \u2014 no cash or discount provided",
+      "Some workshops and one-to-one sessions require advance booking"
+    ],
+    "effort": {
+      "hours": 0.5,
+      "display": "~30 mins to book",
+      "level": "low"
+    },
+    "timeline": {
+      "decision": "Immediate access for drop-in resources; bookable sessions within 1\u20132 weeks",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "kings-trust-enterprise",
+    "name": "King's Trust Enterprise Programme",
+    "provider": "King's Trust",
+    "url": "https://www.kingstrust.org.uk",
+    "type": "loan",
+    "repayable": true,
+    "funding": {
+      "min": 500,
+      "max": 4000,
+      "currency": "GBP",
+      "display": "\u00a3500\u2013\u00a34,000"
+    },
+    "summary": "Low-interest loan and mentoring programme for young people aged 18\u201330 starting or growing a business. Includes business planning support, a dedicated mentor, and ongoing advice.",
+    "eligibility": [
+      {
+        "criterion": "Aged 18\u201330 at point of application",
+        "type": "personal",
+        "notes": "owner_age must be collected during onboarding \u2014 not available from HMRC or Companies House"
+      },
+      {
+        "criterion": "UK-based business",
+        "type": "geography"
+      },
+      {
+        "criterion": "Early-stage or pre-start business",
+        "type": "trading_age"
+      }
+    ],
+    "documents": [
+      "Proof of age (passport or driving licence)",
+      "Short business description or plan",
+      "Basic financial forecast"
+    ],
+    "restrictions": [
+      "Strictly age-gated \u2014 applicants must be 30 or under",
+      "Loan product \u2014 repayment required, though at low interest rates",
+      "Maximum loan of \u00a34,000"
+    ],
+    "effort": {
+      "hours": 3,
+      "display": "~3 hrs",
+      "level": "medium"
+    },
+    "timeline": {
+      "decision": "2\u20134 weeks",
+      "open": "Year-round"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "innovate-uk-rd-grants",
+    "name": "Innovate UK R&D Grants",
+    "provider": "Innovate UK / UK Research and Innovation",
+    "url": "https://www.ukri.org/councils/innovate-uk",
+    "type": "grant",
+    "repayable": false,
+    "funding": {
+      "min": 25000,
+      "max": null,
+      "currency": "GBP",
+      "display": "\u00a325,000\u2013\u00a3500,000+"
+    },
+    "summary": "Competitive grant funding for businesses developing novel technology, products, or processes. Requires genuine research and development activity. Highly competitive \u2014 applications are assessed against innovation merit, commercial potential, and team capability.",
+    "eligibility": [
+      {
+        "criterion": "UK-based business",
+        "type": "geography"
+      },
+      {
+        "criterion": "Project must involve genuine R&D \u2014 developing something novel, not applying existing knowledge",
+        "type": "intent"
+      },
+      {
+        "criterion": "Must demonstrate commercial potential of the innovation",
+        "type": "market"
+      },
+      {
+        "criterion": "Typically requires matched funding or industry collaboration for larger awards",
+        "type": "financial"
+      }
+    ],
+    "documents": [
+      "Detailed project proposal",
+      "Evidence of innovation and novelty",
+      "Team CVs and capability statement",
+      "Financial projections and funding breakdown",
+      "Letters of support from partners or customers (where applicable)"
+    ],
+    "restrictions": [
+      "Funding is for R&D activity only \u2014 not for general trading, marketing, or operational costs",
+      "Projects must be time-limited with defined milestones",
+      "Subject to grant monitoring and reporting requirements"
+    ],
+    "effort": {
+      "hours": 40,
+      "display": "20\u201340+ hrs",
+      "level": "high"
+    },
+    "timeline": {
+      "decision": "3\u20136 months from application deadline",
+      "open": "Competitive rounds \u2014 check Innovate UK Funding Finder for open calls"
+    },
+    "last_verified": "2026-05-13"
+  },
+  {
+    "id": "rd-tax-relief",
+    "name": "R&D Tax Relief",
+    "provider": "HMRC",
+    "url": "https://www.gov.uk/guidance/corporation-tax-research-and-development-rd-relief",
+    "type": "tax_relief",
+    "repayable": false,
+    "funding": {
+      "min": null,
+      "max": null,
+      "currency": "GBP",
+      "display": "Tax credit or reduction on qualifying R&D expenditure"
+    },
+    "summary": "HMRC scheme allowing companies to claim tax relief on qualifying research and development costs. Can result in a reduction in corporation tax or a cash credit for loss-making companies. Claimed through the annual corporation tax return.",
+    "eligibility": [
+      {
+        "criterion": "UK limited company subject to corporation tax",
+        "type": "legal_structure"
+      },
+      {
+        "criterion": "Must have incurred qualifying R&D expenditure in the tax year",
+        "type": "intent"
+      },
+      {
+        "criterion": "R&D activity must seek to achieve a scientific or technological advance",
+        "type": "intent"
+      }
+    ],
+    "documents": [
+      "Detailed description of R&D projects and qualifying activities",
+      "Breakdown of qualifying expenditure (staff costs, materials, software, subcontractors)",
+      "Corporation tax return (CT600)"
+    ],
+    "restrictions": [
+      "Only available to limited companies \u2014 sole traders cannot claim",
+      "Standard design, marketing, and business development work does not qualify",
+      "Claims are subject to HMRC review and may be investigated"
+    ],
+    "effort": {
+      "hours": 8,
+      "display": "~8 hrs (recommend specialist advisor)",
+      "level": "high"
+    },
+    "timeline": {
+      "decision": "Processed as part of corporation tax return \u2014 typically 4\u20138 weeks after submission",
+      "open": "Claimed annually via corporation tax return"
+    },
+    "last_verified": "2026-05-13"
+  }
+]

@@ -14,6 +14,10 @@ class BusinessProfile(BaseModel):
     goals: List[str] = []
     data_sources: List[str] = []
     companies_house_id: Optional[str] = None
+    # Collected during onboarding for scheme-specific gates
+    owner_age: Optional[int] = None
+    has_rd_activity: Optional[bool] = None
+    funding_needed: Optional[int] = None
 
 
 class BusinessProfileUpdate(BaseModel):
@@ -21,3 +25,6 @@ class BusinessProfileUpdate(BaseModel):
     employee_count: Optional[int] = None
     annual_revenue: Optional[float] = None
     goals: Optional[List[str]] = None
+    owner_age: Optional[int] = None
+    has_rd_activity: Optional[bool] = None
+    funding_needed: Optional[int] = None

@@ -10,7 +10,7 @@
       "min": null,
       "max": 5000,
       "currency": "GBP",
-      "display": "Up to \u00a35,000"
+      "display": "Up to £5,000"
     },
     "summary": "Grant for early-stage businesses in West Yorkshire within their first 3 years of trading. Covers growth-related costs including equipment, software, marketing, and professional services. No repayment required.",
     "eligibility": [
@@ -27,10 +27,30 @@
         "type": "size"
       },
       {
-        "criterion": "Some professional services sectors excluded \u2014 confirm with provider",
+        "criterion": "Some professional services sectors excluded — confirm with provider",
         "type": "sector"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "lt",
+        "value": 3,
+        "label": "Trading under 3 years",
+        "knockout": true
+      },
+      {
+        "field": "employee_count",
+        "operator": "lt",
+        "value": 10,
+        "label": "Fewer than 10 employees",
+        "knockout": false
+      }
+    ],
+    "tags": {
+      "sectors": ["creative", "digital", "technology", "retail", "hospitality"],
+      "goals": ["equipment", "software", "marketing", "growth", "premises"]
+    },
     "documents": [
       "Last 6 months' bank statements",
       "Short business description",
@@ -41,7 +61,7 @@
     "restrictions": [
       "Cannot be used to pay the business owner's salary",
       "Cannot be used to repay existing debt",
-      "Budget is finite and allocated annually \u2014 not guaranteed year-round"
+      "Budget is finite and allocated annually — not guaranteed year-round"
     ],
     "effort": {
       "hours": 2,
@@ -49,7 +69,7 @@
       "level": "low"
     },
     "timeline": {
-      "decision": "4\u20136 weeks",
+      "decision": "4–6 weeks",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -65,7 +85,7 @@
       "min": 500,
       "max": 25000,
       "currency": "GBP",
-      "display": "\u00a3500\u2013\u00a325,000"
+      "display": "£500–£25,000"
     },
     "summary": "Government-backed personal loan for businesses under 3 years old. Fixed 6% annual interest rate with 12 months interest-free at the start. Includes 12 months of free mentoring.",
     "eligibility": [
@@ -82,6 +102,19 @@
         "type": "financial"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "lt",
+        "value": 3,
+        "label": "Trading under 3 years",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["equipment", "working_capital", "marketing", "hire", "premises"]
+    },
     "documents": [
       "Last 6 months' bank statements",
       "Photo ID",
@@ -89,8 +122,8 @@
       "Cash flow forecast (12 months)"
     ],
     "restrictions": [
-      "Maximum \u00a325,000 per individual applicant",
-      "Personal liability \u2014 loan is made to the individual, not the company",
+      "Maximum £25,000 per individual applicant",
+      "Personal liability — loan is made to the individual, not the company",
       "Repayments begin after the 12-month interest-free period"
     ],
     "effort": {
@@ -99,7 +132,7 @@
       "level": "medium"
     },
     "timeline": {
-      "decision": "2\u20134 weeks",
+      "decision": "2–4 weeks",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -115,9 +148,9 @@
       "min": null,
       "max": 5000,
       "currency": "GBP",
-      "display": "50% discount on approved software, up to \u00a35,000"
+      "display": "50% discount on approved software, up to £5,000"
     },
-    "summary": "Government-funded 50% discount on approved digital software \u2014 covering accounting, CRM, e-commerce, and productivity tools. Applied at point of purchase from an approved supplier, not reimbursed afterwards.",
+    "summary": "Government-funded 50% discount on approved digital software — covering accounting, CRM, e-commerce, and productivity tools. Applied at point of purchase from an approved supplier, not reimbursed afterwards.",
     "eligibility": [
       {
         "criterion": "UK-based business",
@@ -132,13 +165,33 @@
         "type": "trading_age"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "gte",
+        "value": 1,
+        "label": "Trading for at least 12 months",
+        "knockout": true
+      },
+      {
+        "field": "employee_count",
+        "operator": "lt",
+        "value": 250,
+        "label": "Fewer than 250 employees",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["software", "marketing", "growth"]
+    },
     "documents": [
       "Proof of UK trading",
       "Companies House or HMRC registration number"
     ],
     "restrictions": [
       "Only valid for software on the government-approved catalogue",
-      "Discount applied at purchase \u2014 not a cash payment or reimbursement",
+      "Discount applied at purchase — not a cash payment or reimbursement",
       "One redemption per business"
     ],
     "effort": {
@@ -163,7 +216,7 @@
       "min": null,
       "max": 25000,
       "currency": "GBP",
-      "display": "Up to \u00a325,000"
+      "display": "Up to £25,000"
     },
     "summary": "Grant for growing businesses in West Yorkshire looking to scale, create jobs, or expand capacity. Aimed at businesses with a proven model and demonstrable growth trajectory rather than early-stage startups.",
     "eligibility": [
@@ -180,10 +233,30 @@
         "type": "intent"
       },
       {
-        "criterion": "Typically expects turnover of \u00a350,000 or above \u2014 confirm with provider",
+        "criterion": "Typically expects turnover of £50,000 or above — confirm with provider",
         "type": "size"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "gte",
+        "value": 1,
+        "label": "At least 1 year trading history",
+        "knockout": false
+      },
+      {
+        "field": "annual_revenue",
+        "operator": "gte",
+        "value": 50000,
+        "label": "Turnover of £50,000 or above",
+        "knockout": false
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["growth", "hire", "equipment", "premises", "export"]
+    },
     "documents": [
       "Last 12 months' bank statements",
       "Most recent filed accounts or management accounts",
@@ -201,7 +274,7 @@
       "level": "high"
     },
     "timeline": {
-      "decision": "6\u20138 weeks",
+      "decision": "6–8 weeks",
       "open": "Year-round, subject to budget availability"
     },
     "last_verified": "2026-05-13"
@@ -226,17 +299,22 @@
         "type": "geography"
       },
       {
-        "criterion": "Eligibility criteria vary by individual scheme \u2014 check current availability",
+        "criterion": "Eligibility criteria vary by individual scheme — check current availability",
         "type": "intent"
       }
     ],
+    "rules": [],
+    "tags": {
+      "sectors": [],
+      "goals": ["growth", "hire", "premises", "equipment", "marketing"]
+    },
     "documents": [
       "Last 6 months' bank statements",
       "Short business description",
       "Proof of Leeds trading address"
     ],
     "restrictions": [
-      "Scheme availability and terms vary \u2014 restrictions depend on the specific grant applied for"
+      "Scheme availability and terms vary — restrictions depend on the specific grant applied for"
     ],
     "effort": {
       "hours": 3,
@@ -245,7 +323,7 @@
     },
     "timeline": {
       "decision": "Varies by scheme",
-      "open": "Varies \u2014 check Leeds City Council website for live schemes"
+      "open": "Varies — check Leeds City Council website for live schemes"
     },
     "last_verified": "2026-05-13"
   },
@@ -262,7 +340,7 @@
       "currency": "GBP",
       "display": "Varies"
     },
-    "summary": "Grant fund supporting businesses in West Yorkshire's creative industries. Aimed at growing the region's creative economy \u2014 arts, media, design, film, music, and related sectors.",
+    "summary": "Grant fund supporting businesses in West Yorkshire's creative industries. Aimed at growing the region's creative economy — arts, media, design, film, music, and related sectors.",
     "eligibility": [
       {
         "criterion": "Registered and operating in West Yorkshire",
@@ -277,6 +355,19 @@
         "type": "intent"
       }
     ],
+    "rules": [
+      {
+        "field": "sector",
+        "operator": "any_in",
+        "value": ["creative", "digital", "technology"],
+        "label": "Creative, digital, or media sector",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": ["creative", "digital"],
+      "goals": ["growth", "equipment", "marketing", "premises", "research"]
+    },
     "documents": [
       "Last 6 months' bank statements",
       "Short business description",
@@ -284,7 +375,7 @@
       "Description of intended spend and growth objective"
     ],
     "restrictions": [
-      "Restricted to creative industries \u2014 hospitality, retail, and general services are not eligible",
+      "Restricted to creative industries — hospitality, retail, and general services are not eligible",
       "Spend must support the creative output or growth of the business"
     ],
     "effort": {
@@ -311,7 +402,7 @@
       "currency": "GBP",
       "display": "90% subsidised leadership programme"
     },
-    "summary": "Subsidised 12-week management and leadership programme delivered by UK business schools. Covers strategy, finance, marketing, and operations. Government covers 90% of the cost; businesses pay \u00a3750.",
+    "summary": "Subsidised 12-week management and leadership programme delivered by UK business schools. Covers strategy, finance, marketing, and operations. Government covers 90% of the cost; businesses pay £750.",
     "eligibility": [
       {
         "criterion": "UK-based business",
@@ -330,13 +421,33 @@
         "type": "intent"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "gte",
+        "value": 1,
+        "label": "Trading for at least 1 year",
+        "knockout": true
+      },
+      {
+        "field": "employee_count",
+        "operator": "gte",
+        "value": 5,
+        "label": "5 or more employees",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["growth", "training", "hire"]
+    },
     "documents": [
       "Proof of employment (payroll records or HMRC submissions showing 5+ employees)",
       "Photo ID",
       "Companies House or HMRC registration number"
     ],
     "restrictions": [
-      "Programme fee of \u00a3750 payable by the business \u2014 not fully free",
+      "Programme fee of £750 payable by the business — not fully free",
       "Applicant must be a senior manager or decision-maker within the business",
       "Time commitment of approximately 50 hours over 12 weeks"
     ],
@@ -346,7 +457,7 @@
       "level": "low"
     },
     "timeline": {
-      "decision": "Rolling intake \u2014 cohort start dates vary by business school",
+      "decision": "Rolling intake — cohort start dates vary by business school",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -362,7 +473,7 @@
       "min": 500,
       "max": 150000,
       "currency": "GBP",
-      "display": "\u00a3500\u2013\u00a3150,000"
+      "display": "£500–£150,000"
     },
     "summary": "Community Development Finance Institution offering loans to businesses in Yorkshire and the Humber that may not qualify for high-street bank lending. Covers asset finance, working capital, and growth investment.",
     "eligibility": [
@@ -383,6 +494,19 @@
         "type": "intent"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_age_years",
+        "operator": "gte",
+        "value": 1,
+        "label": "At least 12 months trading history",
+        "knockout": false
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["equipment", "working_capital", "growth", "premises", "hire"]
+    },
     "documents": [
       "Last 12 months' bank statements",
       "Most recent filed accounts or management accounts",
@@ -392,7 +516,7 @@
       "Details of any existing borrowing"
     ],
     "restrictions": [
-      "Loan product \u2014 full repayment required with interest",
+      "Loan product — full repayment required with interest",
       "Interest rates vary depending on loan size and risk profile",
       "Personal guarantee may be required for larger loan amounts"
     ],
@@ -402,7 +526,7 @@
       "level": "high"
     },
     "timeline": {
-      "decision": "2\u20136 weeks depending on loan size",
+      "decision": "2–6 weeks depending on loan size",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -427,9 +551,14 @@
         "type": "geography"
       }
     ],
+    "rules": [],
+    "tags": {
+      "sectors": [],
+      "goals": ["research", "growth", "marketing", "equipment"]
+    },
     "documents": [],
     "restrictions": [
-      "Not a funding programme \u2014 no cash or discount provided",
+      "Not a funding programme — no cash or discount provided",
       "Some workshops and one-to-one sessions require advance booking"
     ],
     "effort": {
@@ -438,7 +567,7 @@
       "level": "low"
     },
     "timeline": {
-      "decision": "Immediate access for drop-in resources; bookable sessions within 1\u20132 weeks",
+      "decision": "Immediate access for drop-in resources; bookable sessions within 1–2 weeks",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -454,14 +583,14 @@
       "min": 500,
       "max": 4000,
       "currency": "GBP",
-      "display": "\u00a3500\u2013\u00a34,000"
+      "display": "£500–£4,000"
     },
-    "summary": "Low-interest loan and mentoring programme for young people aged 18\u201330 starting or growing a business. Includes business planning support, a dedicated mentor, and ongoing advice.",
+    "summary": "Low-interest loan and mentoring programme for young people aged 18–30 starting or growing a business. Includes business planning support, a dedicated mentor, and ongoing advice.",
     "eligibility": [
       {
-        "criterion": "Aged 18\u201330 at point of application",
+        "criterion": "Aged 18–30 at point of application",
         "type": "personal",
-        "notes": "owner_age must be collected during onboarding \u2014 not available from HMRC or Companies House"
+        "notes": "owner_age must be collected during onboarding — not available from HMRC or Companies House"
       },
       {
         "criterion": "UK-based business",
@@ -472,15 +601,42 @@
         "type": "trading_age"
       }
     ],
+    "rules": [
+      {
+        "field": "owner_age",
+        "operator": "gte",
+        "value": 18,
+        "label": "Owner aged 18 or over",
+        "knockout": true
+      },
+      {
+        "field": "owner_age",
+        "operator": "lte",
+        "value": 30,
+        "label": "Owner aged 30 or under",
+        "knockout": true
+      },
+      {
+        "field": "trading_age_years",
+        "operator": "lt",
+        "value": 3,
+        "label": "Early-stage business (under 3 years)",
+        "knockout": false
+      }
+    ],
+    "tags": {
+      "sectors": [],
+      "goals": ["equipment", "working_capital", "marketing", "growth"]
+    },
     "documents": [
       "Proof of age (passport or driving licence)",
       "Short business description or plan",
       "Basic financial forecast"
     ],
     "restrictions": [
-      "Strictly age-gated \u2014 applicants must be 30 or under",
-      "Loan product \u2014 repayment required, though at low interest rates",
-      "Maximum loan of \u00a34,000"
+      "Strictly age-gated — applicants must be 30 or under",
+      "Loan product — repayment required, though at low interest rates",
+      "Maximum loan of £4,000"
     ],
     "effort": {
       "hours": 3,
@@ -488,7 +644,7 @@
       "level": "medium"
     },
     "timeline": {
-      "decision": "2\u20134 weeks",
+      "decision": "2–4 weeks",
       "open": "Year-round"
     },
     "last_verified": "2026-05-13"
@@ -504,16 +660,16 @@
       "min": 25000,
       "max": null,
       "currency": "GBP",
-      "display": "\u00a325,000\u2013\u00a3500,000+"
+      "display": "£25,000–£500,000+"
     },
-    "summary": "Competitive grant funding for businesses developing novel technology, products, or processes. Requires genuine research and development activity. Highly competitive \u2014 applications are assessed against innovation merit, commercial potential, and team capability.",
+    "summary": "Competitive grant funding for businesses developing novel technology, products, or processes. Requires genuine research and development activity. Highly competitive — applications are assessed against innovation merit, commercial potential, and team capability.",
     "eligibility": [
       {
         "criterion": "UK-based business",
         "type": "geography"
       },
       {
-        "criterion": "Project must involve genuine R&D \u2014 developing something novel, not applying existing knowledge",
+        "criterion": "Project must involve genuine R&D — developing something novel, not applying existing knowledge",
         "type": "intent"
       },
       {
@@ -525,6 +681,19 @@
         "type": "financial"
       }
     ],
+    "rules": [
+      {
+        "field": "has_rd_activity",
+        "operator": "eq",
+        "value": true,
+        "label": "Genuine R&D activity",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": ["technology", "science", "digital"],
+      "goals": ["research", "growth"]
+    },
     "documents": [
       "Detailed project proposal",
       "Evidence of innovation and novelty",
@@ -533,18 +702,18 @@
       "Letters of support from partners or customers (where applicable)"
     ],
     "restrictions": [
-      "Funding is for R&D activity only \u2014 not for general trading, marketing, or operational costs",
+      "Funding is for R&D activity only — not for general trading, marketing, or operational costs",
       "Projects must be time-limited with defined milestones",
       "Subject to grant monitoring and reporting requirements"
     ],
     "effort": {
       "hours": 40,
-      "display": "20\u201340+ hrs",
+      "display": "20–40+ hrs",
       "level": "high"
     },
     "timeline": {
-      "decision": "3\u20136 months from application deadline",
-      "open": "Competitive rounds \u2014 check Innovate UK Funding Finder for open calls"
+      "decision": "3–6 months from application deadline",
+      "open": "Competitive rounds — check Innovate UK Funding Finder for open calls"
     },
     "last_verified": "2026-05-13"
   },
@@ -576,13 +745,33 @@
         "type": "intent"
       }
     ],
+    "rules": [
+      {
+        "field": "trading_status",
+        "operator": "in",
+        "value": ["limited_company"],
+        "label": "UK limited company required",
+        "knockout": true
+      },
+      {
+        "field": "has_rd_activity",
+        "operator": "eq",
+        "value": true,
+        "label": "Qualifying R&D expenditure",
+        "knockout": true
+      }
+    ],
+    "tags": {
+      "sectors": ["technology", "science", "digital"],
+      "goals": ["research"]
+    },
     "documents": [
       "Detailed description of R&D projects and qualifying activities",
       "Breakdown of qualifying expenditure (staff costs, materials, software, subcontractors)",
       "Corporation tax return (CT600)"
     ],
     "restrictions": [
-      "Only available to limited companies \u2014 sole traders cannot claim",
+      "Only available to limited companies — sole traders cannot claim",
       "Standard design, marketing, and business development work does not qualify",
       "Claims are subject to HMRC review and may be investigated"
     ],
@@ -592,7 +781,7 @@
       "level": "high"
     },
     "timeline": {
-      "decision": "Processed as part of corporation tax return \u2014 typically 4\u20138 weeks after submission",
+      "decision": "Processed as part of corporation tax return — typically 4–8 weeks after submission",
       "open": "Claimed annually via corporation tax return"
     },
     "last_verified": "2026-05-13"

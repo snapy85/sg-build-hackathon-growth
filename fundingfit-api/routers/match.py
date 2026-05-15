@@ -5,8 +5,8 @@ from fastapi import APIRouter, Depends, HTTPException
 import database as db
 from models.business import BusinessProfile
 from models.scheme import SchemeResult
-from services.claude_service import generate_fit_signals
 from services.identity_service import optional_user
+from services.matching_service import match_all
 from services.schemes_service import filter_by_region, load_schemes
 
 router = APIRouter()
@@ -150,7 +150,7 @@ async def match_schemes(
     business = BusinessProfile(**profile_data)
     schemes = load_schemes()
     relevant = filter_by_region(schemes, business.postcode)
-    results = await generate_fit_signals(business, relevant)
+    results = await match_all(business, relevant)
     sorted_results = _sort_results(results)
 
     db.save_interaction(

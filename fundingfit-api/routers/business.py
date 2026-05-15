@@ -25,12 +25,11 @@ async def update_my_business(
     if not profile:
         raise HTTPException(status_code=404, detail="No business profile found")
 
-    if update.employee_count is not None:
-        profile["employee_count"] = update.employee_count
-    if update.annual_revenue is not None:
-        profile["annual_revenue"] = update.annual_revenue
-    if update.goals is not None:
-        profile["goals"] = update.goals
+    for field in ("employee_count", "annual_revenue", "goals",
+                  "owner_age", "has_rd_activity", "funding_needed"):
+        val = getattr(update, field)
+        if val is not None:
+            profile[field] = val
 
     db.upsert_business_profile(user["profile_id"], profile)
     return BusinessProfile(**profile)

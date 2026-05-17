@@ -23,6 +23,7 @@ app = FastAPI(title="FundingFit API", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+         #allow_origins=["*"],
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:8000",

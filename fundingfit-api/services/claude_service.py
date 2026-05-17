@@ -14,7 +14,15 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-MODEL = "claude-sonnet-4-0"
+
+def _parse_json(raw: str):
+    text = raw.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[-1]
+        text = text.rsplit("```", 1)[0]
+    return json.loads(text.strip())
+
+MODEL = "claude-sonnet-4-5"
 MAX_TOKENS = 1000
 
 _client: Optional[AsyncAnthropic] = None
@@ -62,7 +70,6 @@ _PLAN_SYSTEM = (
     "and scheme_specific_requirements (list of strings, items only needed for that scheme)"
 )
 
-# --- NEW: Goals extraction system prompt ---
 _EXTRACT_GOALS_SYSTEM = (
     "You are helping a UK small business owner articulate their ambitions. "
     "Given their free text description, extract exactly three fields. "
@@ -77,6 +84,7 @@ _EXTRACT_GOALS_SYSTEM = (
     "If the user does not mention one of these, make a reasonable inference "
     "from what they did say. Keep each field under 10 words."
 )
+
 
 
 async def generate_fit_signals(
@@ -109,7 +117,7 @@ async def generate_fit_signals(
         raw_response = next(
             (b.text for b in response.content if b.type == "text"), ""
         )
-        fit_data = json.loads(raw_response)
+        fit_data = _parse_json(raw_response)
 
         from services.schemes_service import infer_region
         scheme_map = {s["id"]: s for s in schemes}
@@ -209,7 +217,7 @@ async def generate_plan(
         raw_response = next(
             (b.text for b in response.content if b.type == "text"), ""
         )
-        plan_data = json.loads(raw_response)
+        plan_data = _parse_json(raw_response)
 
         scheme_items = [
             PlanItem(
@@ -242,11 +250,7 @@ async def generate_plan(
         )
 
 
-# --- NEW: Goals extraction function ---
 async def extract_goals(free_text: str):
-    """Converts free text ambitions into a structured AmbitionsProfile.
-    Called by POST /api/goals/extract before saving to the business profile.
-    """
     from models.business import AmbitionsProfile
     client = _get_client()
     raw_response = ""
@@ -272,7 +276,7 @@ async def extract_goals(free_text: str):
         raw_response = next(
             (b.text for b in response.content if b.type == "text"), ""
         )
-        goals_data = json.loads(raw_response)
+        goals_data = _parse_json(raw_response)
         return AmbitionsProfile(**goals_data)
 
     except json.JSONDecodeError:

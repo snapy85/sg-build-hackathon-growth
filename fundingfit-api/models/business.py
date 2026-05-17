@@ -27,6 +27,6 @@ class AmbitionsProfile(BaseModel):
     """Structured ambitions extracted from the user's free text input.
     Maps directly to the Review screen (Screen 06) fields.
     """
-    expected_growth: str   # e.g. "Double revenue in 12 months"
-    opportunity: str       # e.g. "AI-led efficiencies"
-    new_customers: str     # e.g. "20 new recurring clients"
+    expected_growth: str
+    opportunity: str
+    new_customers: str

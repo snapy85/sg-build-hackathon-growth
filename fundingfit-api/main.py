@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 import database
-from routers import business, history, match, plan, schemes
+from routers import business, goals, history, match, plan, schemes
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -33,6 +33,7 @@ app.include_router(schemes.router, prefix="/api")
 app.include_router(match.router, prefix="/api")
 app.include_router(plan.router, prefix="/api")
 app.include_router(history.router, prefix="/api")
+app.include_router(goals.router, prefix="/api")   # goals extraction + confirm
 
 
 @app.get("/health")

@@ -62,6 +62,22 @@ _PLAN_SYSTEM = (
     "and scheme_specific_requirements (list of strings, items only needed for that scheme)"
 )
 
+# --- NEW: Goals extraction system prompt ---
+_EXTRACT_GOALS_SYSTEM = (
+    "You are helping a UK small business owner articulate their ambitions. "
+    "Given their free text description, extract exactly three fields. "
+    "Reply ONLY with a valid JSON object — no preamble, no markdown.\n\n"
+    "Fields:\n"
+    "- expected_growth: one concise sentence describing their growth target "
+    "(e.g. 'Double revenue in 12 months')\n"
+    "- opportunity: one concise sentence describing how they plan to achieve it "
+    "(e.g. 'AI-led efficiencies')\n"
+    "- new_customers: one concise sentence describing their customer goal "
+    "(e.g. '20 new recurring clients')\n\n"
+    "If the user does not mention one of these, make a reasonable inference "
+    "from what they did say. Keep each field under 10 words."
+)
+
 
 async def generate_fit_signals(
     business: BusinessProfile, schemes: list[dict]
@@ -220,6 +236,55 @@ async def generate_plan(
         raise
     except Exception as exc:
         logger.error("Claude API error in generate_plan: %s", exc)
+        raise HTTPException(
+            status_code=502,
+            detail="AI service returned an unexpected response",
+        )
+
+
+# --- NEW: Goals extraction function ---
+async def extract_goals(free_text: str):
+    """Converts free text ambitions into a structured AmbitionsProfile.
+    Called by POST /api/goals/extract before saving to the business profile.
+    """
+    from models.business import AmbitionsProfile
+    client = _get_client()
+    raw_response = ""
+    try:
+        response = await client.messages.create(
+            model=MODEL,
+            max_tokens=MAX_TOKENS,
+            system=[
+                {
+                    "type": "text",
+                    "text": _EXTRACT_GOALS_SYSTEM,
+                    "cache_control": {"type": "ephemeral"},
+                }
+            ],
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Business owner's ambitions:\n{free_text}",
+                }
+            ],
+        )
+
+        raw_response = next(
+            (b.text for b in response.content if b.type == "text"), ""
+        )
+        goals_data = json.loads(raw_response)
+        return AmbitionsProfile(**goals_data)
+
+    except json.JSONDecodeError:
+        logger.error("Claude returned malformed JSON for extract_goals: %s", raw_response)
+        raise HTTPException(
+            status_code=502,
+            detail="AI service returned an unexpected response",
+        )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.error("Claude API error in extract_goals: %s", exc)
         raise HTTPException(
             status_code=502,
             detail="AI service returned an unexpected response",

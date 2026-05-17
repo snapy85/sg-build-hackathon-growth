@@ -21,3 +21,12 @@ class BusinessProfileUpdate(BaseModel):
     employee_count: Optional[int] = None
     annual_revenue: Optional[float] = None
     goals: Optional[List[str]] = None
+
+
+class AmbitionsProfile(BaseModel):
+    """Structured ambitions extracted from the user's free text input.
+    Maps directly to the Review screen (Screen 06) fields.
+    """
+    expected_growth: str   # e.g. "Double revenue in 12 months"
+    opportunity: str       # e.g. "AI-led efficiencies"
+    new_customers: str     # e.g. "20 new recurring clients"
